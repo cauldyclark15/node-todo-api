@@ -7,6 +7,7 @@ const { Todo } = require('./models/todo');
 const { User } = require('./models/user');
 
 const app = express();
+const port = process.env.PORT || 5555;
 
 // 3rd party middleware
 app.use(bodyParser.json());
@@ -53,8 +54,8 @@ app.get('/todos/:id', (req, res) => {
   })
 })
 
-app.listen(5555, () => {
-  console.log('started on port 5555');
+app.listen(port, () => {
+  console.log(`started on port ${port}`);
 });
 
 module.exports = { app };
